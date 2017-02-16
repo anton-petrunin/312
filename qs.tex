@@ -1,0 +1,254 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+%\usepackage[active]{srcltx}
+\usepackage{amsmath,amssymb} 
+\usepackage{enumerate}
+
+
+\def\noi{\noindent}%  
+\def\CC{\mathbb{C}}%  
+\def\PP{\mathbb{P}}%  
+\def\NN{\mathbb{N}}%  
+\def\RR{\mathbb{R}}% 
+\def\II{\mathbb{I}}
+\def\ZZ{\mathbb{Z}}% 
+\def\QQ{\mathbb{Q}}% 
+\def\cC{{\Cal C}}%  
+\def\cF{{\Cal F}}%  
+\def\cM{{\Cal M}}%  
+\def\cS{{\Cal S}}%  
+\def\cT{{\Cal T}}%  
+\def\eps{\varepsilon}%  
+\def\op{\operatorname}
+
+\def\i{\subset}
+\def\l{\!\left}
+\def\r{\right}
+\def\<{\langle}
+\def\>{\rangle}
+\def\:{\colon}
+\def\abs#1{|#1|}
+
+\begin{document}
+
+\begin{center}
+Quiz 1.
+\end{center}
+
+
+\ 
+
+\noi{\bf 1.} 
+Let $x, y \in F$, where $F$ is an ordered field.  
+Suppose $0 < x < y$.  
+Show that $$x^2 < y^2$$
+
+\ 
+
+\noi{\bf Solution:}
+Since $x,y>0$, multiplying $x < y$ by $x$ and $y$, we get
+\[x^2<yx\quad\text{and}\quad xy<y^2.\]
+Therefore 
+\[x^2<y^2.\]
+
+\
+
+\noi{\bf 2.} Show that the following identity holds in any field
+$$(-x)y=-xy.$$
+
+\ 
+
+\noi{\bf Solution:} In addition to the properties of the field (Definition 1.1.5) we will use the identity $0y=0$ which was proved already.
+
+\[xy+(-xy)=0=0y=(x+(-x))y=xy+(-x)y.\]
+Therefore 
+\[xy+(-xy)=xy+(-x)y.\]
+Adding $(-xy)$ to both sides, we get
+\[(-xy)=(-x)y.\]
+
+\begin{center}
+Quiz 2.
+\end{center}
+
+
+\ 
+
+\noi{\bf 1.} Let $S \subset \RR$ be a nonempty set, bounded from above. 
+Show that for every $\eps > 0$ there exists $x \in  S$ such that 
+$$\sup S - \eps < x \le  \sup S.$$
+
+\ 
+
+\noi{\bf Solution:} The second inequality holds for any $x\in S$  since $\sup S$ is an upper bound of $S$.
+
+If there is no $x\in S$ such that $\sup S - \eps < x$ then $x\le \sup S - \eps$ for any $x\in S$.
+That is, $\sup S - \eps$ is an upper bound of $S$.
+In particular $\sup S$ is not the least upper bound, a contradiction.
+
+\ 
+
+\noi{\bf 2.} Let $A,B\subset \RR$ be bounded nonempty sets.
+Assume for any $a\in A$ there is $b\in B$ such that $a\le b$.
+Show that $\sup A\le \sup B$.
+
+\ 
+
+\noi{\bf Solution:} Since for any $a\in A$ there is $b\in B$ such that $a\le b$,
+any upper bound for $B$ is an upper bound for $A$.
+In particular, $\sup B$ is an upper bound for $A$.
+Therefore $\sup A\le \sup B$.
+
+\begin{center}
+Quiz 3.%NUMBER
+\end{center}
+
+
+\ 
+
+\noi{\bf 1.} 
+Let $A$ and $B$ be two nonempty bounded sets of real numbers.
+Let
+$$C := \{ a+b : a \in A, b \in B \}.$$
+Show that $C$ is a bounded set and that
+$$\sup\,C = \sup\,A + \sup\,B.$$
+
+\ 
+
+\noi{\bf Solution:} Since $a\le \sup A$ for any $a\in A$
+and $b\le \sup B$ for any $b\in B$, we have
+\[a+b\le \sup\,A + \sup\,B\]
+for any $a\le \sup A$ and $b\in B$.
+That is $\sup\,A + \sup\,B$ is an upper bound for $C$.
+
+Note that for any $\eps>0$ there is $a\in A$ such that $a>\sup A-\tfrac\eps2$
+and $b\in B$ such that $b>\sup B-\tfrac\eps2$.
+Therefore $a+b>\sup A+\sup B-\eps$.
+That is $\sup A+\sup B-\eps$ is not an upper bound for any $\eps>0$;
+hence the statement follows.
+
+
+\ 
+
+\noi{\bf 2.} Give a definition of absolute value.
+
+\
+
+\noi{\bf Solution:}
+\[|x|=\left[\begin{aligned}
+             x&&\text{if $x\ge 0$;}
+             \\
+             -x&&\text{if $x< 0$.}
+            \end{aligned}
+ \right.
+ \]
+
+\ 
+
+\noi Use it to prove that
+$|-x|=|x|$
+for any $x\in\RR$.
+
+\
+
+\noi{\bf Solution:} 
+\begin{align*}
+&\text{If $x=0$ then $x=-x$}&&&& \Rightarrow &&&|x|&=|-x|;
+\\
+&\text{If $x>0$ then $-x<0$}
+&&\Rightarrow 
+& |x|&=x\ \text{and}\ |-x|=x 
+&&\Rightarrow& |x|&=|-x|;
+\\
+&\text{If $x<0$ then $-x>0$}
+&&\Rightarrow &
+|x|&=-x\ \text{and}\ |x|=-x
+&&
+\Rightarrow&
+ |x|&=|-x|.
+\end{align*}
+
+
+
+\begin{center}
+Quiz 4.
+\end{center}
+
+
+
+\ 
+
+\noi{\bf 1.} 
+Suppose $S$ is a set of disjoint open intervals in $\RR$.
+That is, 
+if $(a,b) \in S$ and $(c,d) \in S$, then either $(a,b) = (c,d)$
+or $(a,b) \cap (c,d) = \emptyset$.
+
+Prove $S$ is a countable set.
+
+\
+
+\noi{\bf Solution:} 
+Since the set of rationals is dense in  $\RR$,
+we can choose a rational number $q\in\QQ$ in each interval from $S$;
+that is, there is an bijection from $S$ to a subset of $\QQ$.
+
+Since $\QQ$ is countable, the statement follows.
+
+\
+
+\noi{\bf 2.} Show that the set of irrational numbers is uncountable.
+
+\
+
+\noi{\bf Solution:} Arguing by contradiction, assume the set irrational numbers $\II=\RR\backslash \QQ$ is countable.
+In this case the $\RR$ can be presented as a union of two countable sets $\II$ and $\QQ$.
+Therefore $\RR$ is countable.
+The latter contradicts Cantor's theorem.
+
+
+\begin{center}
+Quiz 5.%NUMBER
+\end{center}
+
+
+\ 
+
+\noi{\bf 1.} Let $\{ x_n \}$ be a sequence.
+\begin{enumerate}[a)]
+\item Show that $\lim\, x_n = 0$ (that is, the limit exists and is zero)
+if and only if $\lim \abs{x_n} = 0$.
+
+\
+
+\noi{\bf Solution:} $\lim\, x_n = 0$ $\Leftrightarrow$ ``for any $\eps>0$ there is $M\in\NN$ such that 
+$|x_n-0|<\eps$ for any $n\ge M$''.
+Since
+\[||x_n|-0|=|x_n|=|x_n-0|.\]
+This statement is equivalent to the following
+``for any $\eps>0$ there is $M\in\NN$ such that 
+$||x_n|-0|<\eps$ for any $n\ge M$''.
+The latter means that $|x_n|\to 0$.
+
+
+\ 
+
+\item Find an example such that $\{ \abs{x_n} \}$ converges and $\{ x_n \}$
+diverges.
+
+\
+
+\noi{\bf Solution:} $x_n=(-1)^n$.
+
+\end{enumerate}
+
+
+
+\ 
+
+\noi{\bf 2.} Prove that any convergent sequence has a unique limit.
+
+\
+
+See Proposition 2.1.6.
+
+\end{document}
